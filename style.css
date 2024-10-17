@@ -9,6 +9,16 @@
     color:rgb(126, 144, 144);
     /* audio player title*/
 }
+
+#song-title{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:rgb(175, 140, 208);
+}
+
+/* #play-button {
+    :;
+}*/
+
 /* display items withfled and center vertically and horizontally */
 .container{
     display: flex;
