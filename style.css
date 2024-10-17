@@ -1,0 +1,31 @@
+#title{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:rgb(126, 144, 144);
+    /* audio player title*/
+}
+/* display items withfled and center vertically and horizontally */
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100vw;
+    height: 100vw; */
+}
+/* container properties + arrange items vertically */
+.vertical-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#main-container{
+    width: 100vw;
+    height: 100vw;
+}
+
+
+.audio-container{
+    height: 300px;
+    margin-top: 20px;
+}
