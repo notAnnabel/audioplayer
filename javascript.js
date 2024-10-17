@@ -15,6 +15,7 @@ const durationText = document.getElementById("duration-text");
 audioPlayer.src = "assets/yoasobi-idol.mp3";
 
 let playing = false;
+let updatingProgress = false;
 
 /**
  * if audio player is ! playing --> dont play sound
@@ -42,7 +43,9 @@ function onLoadedMetadata(){
 }
 
 function onTimeUpdate(){
+    if (!updatingProgress){
     progressSlider.value = audioPlayer.currentTime;
+    }
 
     progressText.innerHTML = secondsToMMSS(audioPlayer.currentTime);
 }
@@ -59,7 +62,14 @@ function onVolumeSliderChange(){
     audioPlayer.volume = volumeSlider.value * 0.01
 }
 
+function onProgressMouseDown(){
+    updatingProgress = true;
+}
 
+function onProgressSliderChange(){
+    audioPlayer.currentTime = progressSlider.value;
+    updatingProgress = false;
+}
 
 function secondsToMMSS(seconds){
     const integerSeconds = parseInt(seconds);
@@ -81,8 +91,11 @@ audioPlayer.onloadedmetadata = onLoadedMetadata;
 audioPlayer.ontimeupdate = onTimeUpdate;
 audioPlayer.onended = onEnded;
 audioPlayer.onchange = onVolumeSliderChange;
+progressSlider.onchange = onProgressSliderChange;
+progressSlider.onmousedown = onProgressMouseDown;
 
 /*     |(^w^)/     */
+
 
 
 
