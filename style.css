@@ -1,3 +1,9 @@
+
+*{
+    background-color:rgb(223, 223, 223);
+}
+
+
 #title{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color:rgb(126, 144, 144);
@@ -28,4 +34,30 @@
 .audio-container{
     height: 300px;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
+
+img {
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgb(126, 84, 135);
+    margin-top: 10px;
+    box-shadow: 4px 4px rgb(110, 63, 77);
+    margin-bottom: 10px;
+    
+}
+
+button {
+    background-color: rgb(172, 128, 182);
+    border-style: solid;
+    border-color: rgb(110, 63, 77);
+    border-width: 2px;
+    margin-left: 3px;
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+/*.justify-space-around{
+    justify-content: space-around;
+}*/
+
