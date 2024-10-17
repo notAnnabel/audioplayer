@@ -5,6 +5,12 @@ const playPauseButton = document.getElementById("play-button");
 
 const progressSlider = document.getElementById("progress-slider");
 
+const volumeSlider = document.getElementById("volume-slider");
+
+// progress text
+const progressText = document.getElementById("progress-text");
+const durationText = document.getElementById("duration-text");
+
 // audioPlayer.src is the first song of the audioplayer by default
 audioPlayer.src = "assets/yoasobi-idol.mp3";
 
@@ -31,10 +37,14 @@ function onPlayPauseClick(){
 /** */
 function onLoadedMetadata(){
     progressSlider.max = audioPlayer.duration;
+
+    durationText.innerHTML = secondsToMMSS(audioPlayer.duration); /*?*/
 }
 
 function onTimeUpdate(){
     progressSlider.value = audioPlayer.currentTime;
+
+    progressText.innerHTML = secondsToMMSS(audioPlayer.currentTime);
 }
 
 
@@ -44,11 +54,33 @@ function onEnded(){
     playing = false;
 }
 
+/* take volumeslider value and update audiplayer.volume */
+function onVolumeSliderChange(){
+    audioPlayer.volume = volumeSlider.value * 0.01
+}
+
+
+
+function secondsToMMSS(seconds){
+    const integerSeconds = parseInt(seconds);
+
+    let MM = parseInt(integerSeconds/60);
+    if(MM < 10) MM = "0" + MM;
+
+    let SS = integerSeconds % 60;
+    if (SS < 10) SS = "0" + SS;
+
+    return MM + ":" + SS;
+}
+
+
+
 // link onclick events to relative objects
 playPauseButton.onclick = onPlayPauseClick;
 audioPlayer.onloadedmetadata = onLoadedMetadata;
 audioPlayer.ontimeupdate = onTimeUpdate;
 audioPlayer.onended = onEnded;
+audioPlayer.onchange = onVolumeSliderChange;
 
 /*     |(^w^)/     */
 

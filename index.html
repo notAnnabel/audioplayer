@@ -25,7 +25,7 @@
         <div class="vertical-container">
             <div class="container">
             <!-- sound -->
-                <input type="range" min="0" max="100">
+                <input id="volume-slider" type="range" min="0" max="100">
             </div>
             <div class="container">
                 <button>previous</button>
@@ -36,7 +36,9 @@
         </div>
         <img src ="assets/hoshino-ai-cover.jpeg" width="200px">
         <div class="container">
-            <p>00:00 / 00:00</p>
+            <p><span id="progress-text">00:00</span> /
+               <span id="duration-text">00:00</span>
+            </p> 
             <input id="progress-slider" type="range" value="0">
         </div>
         </div>
