@@ -11,6 +11,8 @@ const volumeSlider = document.getElementById("volume-slider");
 const progressText = document.getElementById("progress-text");
 const durationText = document.getElementById("duration-text");
 
+const aiAnimated = document.getElementById("animated-ai");
+
 // audioPlayer.src is the first song of the audioplayer by default
 audioPlayer.src = "assets/yoasobi-idol.mp3";
 audioPlayer.volume = 0.5;
@@ -29,10 +31,12 @@ function onPlayPauseClick(){
         audioPlayer.pause();
         playPauseButton.HTML = "Play";
         playing = false;
+        aiAnimated = document.getElementById("animated-ai").src="assets/hoshino-ai-cover.jpeg";
     } else {
         audioPlayer.play();
         playPauseButton.HTML = "Pause";
         playing = true;
+        aiAnimated = document.getElementById("animated-ai").src="assets/hoshino-ai-cover-gif.gif";
     }
 }
 
