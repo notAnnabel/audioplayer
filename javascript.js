@@ -88,7 +88,14 @@ function secondsToMMSS(seconds){
     return MM + ":" + SS;
 }
 
+function onChangeSong(){
+    
 
+
+
+
+
+}
 
 // link onclick events to relative objects
 playPauseButton.onclick = onPlayPauseClick;
