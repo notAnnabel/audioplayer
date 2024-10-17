@@ -13,6 +13,7 @@ const durationText = document.getElementById("duration-text");
 
 // audioPlayer.src is the first song of the audioplayer by default
 audioPlayer.src = "assets/yoasobi-idol.mp3";
+audioPlayer.volume = 0.5;
 
 let playing = false;
 let updatingProgress = false;
