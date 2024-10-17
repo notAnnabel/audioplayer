@@ -2,6 +2,9 @@ const audioPlayer = new Audio();
 
 const playPauseButton = document.getElementById("play-button");
 
+
+const progressSlider = document.getElementById("progress-slider");
+
 // audioPlayer.src is the first song of the audioplayer by default
 audioPlayer.src = "assets/yoasobi-idol.mp3";
 
@@ -23,19 +26,29 @@ function onPlayPauseClick(){
         playPauseButton.HTML = "Pause";
         playing = true;
     }
-    // audioPlayer.play();
-    // playPauseButton.innerHTML = "Pause";
 }
 
 /** */
 function onLoadedMetadata(){
-    console.log(audioPlayer.duration);
+    progressSlider.max = audioPlayer.duration;
+}
+
+function onTimeUpdate(){
+    progressSlider.value = audioPlayer.currentTime;
+}
+
+
+function onEnded(){
+    progressSlider.value = 0;
+    playPauseButton.innerHTML ="Play";
+    playing = false;
 }
 
 // link onclick events to relative objects
 playPauseButton.onclick = onPlayPauseClick;
 audioPlayer.onloadedmetadata = onLoadedMetadata;
-
+audioPlayer.ontimeupdate = onTimeUpdate;
+audioPlayer.onended = onEnded;
 
 /*     |(^w^)/     */
 
