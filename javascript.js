@@ -88,14 +88,26 @@ function secondsToMMSS(seconds){
     return MM + ":" + SS;
 }
 
-function onChangeSong(){
-    
 
-
-
-
-
+function onPreviousNextClick(){
+    if() {
+        audioPlayer.pause();
+        playPauseButton.HTML = "Play";
+        playing = false;
+        aiAnimated = document.getElementById("animated-ai").src="assets/hoshino-ai-cover.jpeg";
+    } else {
+        audioPlayer.play();
+        playPauseButton.HTML = "Pause";
+        playing = true;
+        aiAnimated = document.getElementById("animated-ai").src="assets/hoshino-ai-cover-gif.gif";
+    }
 }
+
+
+
+
+
+
 
 // link onclick events to relative objects
 playPauseButton.onclick = onPlayPauseClick;
