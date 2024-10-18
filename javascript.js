@@ -21,6 +21,16 @@ let playing = false;
 let updatingProgress = false;
 
 /**
+ *  starts song as 1
+ *  next song = +1 increment
+ *  previous song = -1 increment
+ *  if song >3 loop back to 1
+ *  if song is < 1 loop back to 3
+ * 1 - 2 - 3 - 1 - 2 - 3
+ *  */
+let songNumber = 1;
+
+/**
  * if audio player is ! playing --> dont play sound
  * if audio player is playing --> play sound 
  
@@ -31,7 +41,12 @@ function onPlayPauseClick(){
         audioPlayer.pause();
         playPauseButton.HTML = "Play";
         playing = false;
-        aiAnimated = document.getElementById("animated-ai").src="assets/hoshino-ai-cover.jpeg";
+        if (songNumber === 1){
+           aiAnimated = document.getElementById("animated-ai").src="assets/hoshino-ai-cover.jpeg";
+        }
+        else if (songNumber === 2){
+            aiAnimated = document.getElementById("animated-ai").src="assets/sigewinne-genshin-cover.png";
+        }
     } else {
         audioPlayer.play();
         playPauseButton.HTML = "Pause";
@@ -88,19 +103,13 @@ function secondsToMMSS(seconds){
     return MM + ":" + SS;
 }
 
-
-function onPreviousNextClick(){
-    if() {
-        audioPlayer.pause();
-        playPauseButton.HTML = "Play";
-        playing = false;
-        aiAnimated = document.getElementById("animated-ai").src="assets/hoshino-ai-cover.jpeg";
-    } else {
-        audioPlayer.play();
-        playPauseButton.HTML = "Pause";
-        playing = true;
-        aiAnimated = document.getElementById("animated-ai").src="assets/hoshino-ai-cover-gif.gif";
+/* change this :D */
+function onPreviousNextClick(songNumber){
+    if (songNumber === 1){
+        songNumber === songNumber+1
+        
     }
+
 }
 
 
@@ -117,6 +126,7 @@ audioPlayer.onended = onEnded;
 audioPlayer.onchange = onVolumeSliderChange;
 progressSlider.onchange = onProgressSliderChange;
 progressSlider.onmousedown = onProgressMouseDown;
+
 
 /*     |(^w^)/     */
 
