@@ -11,7 +11,7 @@ const volumeSlider = document.getElementById("volume-slider");
 const progressText = document.getElementById("progress-text");
 const durationText = document.getElementById("duration-text");
 
-const aiAnimated = document.getElementById("animated-ai");
+let aiAnimated = document.getElementById("animated-ai");
 
 // audioPlayer.src is the first song of the audioplayer by default
 audioPlayer.src = "assets/yoasobi-idol.mp3";
@@ -51,8 +51,14 @@ function onPlayPauseClick(){
         audioPlayer.play();
         playPauseButton.HTML = "Pause";
         playing = true;
-        aiAnimated = document.getElementById("animated-ai").src="assets/hoshino-ai-cover-gif.gif";
-    }
+        if (songNumber === 1){
+            aiAnimated = document.getElementById("animated-ai").src="assets/hoshino-ai-cover-gif.gif";
+         }
+         else if (songNumber === 2){
+             aiAnimated = document.getElementById("animated-ai").src="assets/sigewinne-genshin-cover-gif.gif";
+        
+                                   }
+           }  
 }
 
 /** */
@@ -79,7 +85,7 @@ function onEnded(){
 
 /* take volumeslider value and update audiplayer.volume */
 function onVolumeSliderChange(){
-    audioPlayer.volume = volumeSlider.value * 0.01
+    audioPlayer.volume = volumeSlider.value * 0.01;
 }
 
 function onProgressMouseDown(){
@@ -103,7 +109,7 @@ function secondsToMMSS(seconds){
     return MM + ":" + SS;
 }
 
-/* change this :D */
+/* change this :D 
 function onPreviousNextClick(songNumber){
     if (songNumber === 1){
         songNumber === songNumber+1
@@ -111,7 +117,7 @@ function onPreviousNextClick(songNumber){
     }
 
 }
-
+*/
 
 
 
@@ -123,7 +129,11 @@ playPauseButton.onclick = onPlayPauseClick;
 audioPlayer.onloadedmetadata = onLoadedMetadata;
 audioPlayer.ontimeupdate = onTimeUpdate;
 audioPlayer.onended = onEnded;
-audioPlayer.onchange = onVolumeSliderChange;
+
+// volume slider events
+volumeSlider.onchange = onVolumeSliderChange;
+
+// progress slider events
 progressSlider.onchange = onProgressSliderChange;
 progressSlider.onmousedown = onProgressMouseDown;
 

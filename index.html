@@ -8,15 +8,17 @@
 <body>
     <link rel="stylesheet" href="style.css">
     <script src="javascript.js" defer></script>
+    <script src="dragdrop.js" defer></script>
     <!-- main container of div -->
-    <div id="main-container" class="vertical-container">
+ <div id="main-container" class="vertical-container">
+      <div draggable="true" id="box"> 
         <!-- audio player title -->
-        <h1 id="title">₊‧°𐐪₊audio player₊𐑂°‧₊</h1>
+        <h1 id="title" class="container">₊‧audio player‧₊</h1>
         
         <p> 
-            <span id="song-title">IDOL</span>
-            <div></div>
-            <span>by yoasobi :3</span>
+            <span id="song-title" class="container">IDOL</span>
+            <div class="container"><span>by</span>
+            <span id="artist-title" class="container">yoasobi</span></div>
         </p>
 
 
@@ -34,14 +36,15 @@
             </div>
 
         </div>
-        <img src ="assets/hoshino-ai-cover.jpeg" id="animated-ai" width="200px">
+        <img src ="assets/hoshino-ai-cover.jpeg" id="animated-ai" class="vertical-container" width="200px">
         <div class="container">
             <p><span id="progress-text">00:00</span> /
                <span id="duration-text">00:00</span>
             </p> 
             <input id="progress-slider" type="range" value="0">
-        </div>
-        </div>
     </div>
+    </div>
+ </div>
+ </div>
 </body>
 </html>

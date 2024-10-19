@@ -1,5 +1,5 @@
-const complements = document.getElementsByClassName("main-container");
-const dropZone = document.getElementById("*");
+const complements = document.getElementById("box");
+const dropZone = document.getElementById("main-container")
 
 function onDrop(event) { 
     // bring fancy hat to position
@@ -44,8 +44,8 @@ dropZone.ondragover = onDragOver;
 
 
 // look through html elemets stored inside the compliments array
-for (let complement of complements){
-    complement.ondragstart = onDragStart;
-      complement.ondragover = onDragOver;
-      complement.ondrop = onDrop;
-}
+
+complements.ondragstart = onDragStart;
+complements.ondragover = onDragOver;
+complements.ondrop = onDrop;
+
