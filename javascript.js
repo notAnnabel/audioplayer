@@ -1,7 +1,11 @@
 const audioPlayer = new Audio();
 
 const playPauseButton = document.getElementById("play-button");
+const previousButton = document.getElementById("previous-button");
+const nextButton = document.getElementById("next-button");
 
+//const artistTitle = document.getElementById("artist-title");
+// const artistTitle = document.getElementById("song-title");
 
 const progressSlider = document.getElementById("progress-slider");
 
@@ -11,7 +15,7 @@ const volumeSlider = document.getElementById("volume-slider");
 const progressText = document.getElementById("progress-text");
 const durationText = document.getElementById("duration-text");
 
-let aiAnimated = document.getElementById("animated-ai");
+const aiAnimated = document.getElementById("animated-ai");
 
 // audioPlayer.src is the first song of the audioplayer by default
 audioPlayer.src = "assets/yoasobi-idol.mp3";
@@ -39,23 +43,23 @@ let songNumber = 1;
 function onPlayPauseClick(){
     if(playing) {
         audioPlayer.pause();
-        playPauseButton.HTML = "Play";
+        playPauseButton.innerHTML = "play";
         playing = false;
         if (songNumber === 1){
-           aiAnimated = document.getElementById("animated-ai").src="assets/hoshino-ai-cover.jpeg";
+           aiAnimated.src="assets/hoshino-ai-cover.jpeg";
         }
         else if (songNumber === 2){
-            aiAnimated = document.getElementById("animated-ai").src="assets/sigewinne-genshin-cover.png";
+            aiAnimated.src="assets/sigewinne-genshin-cover.png";
         }
     } else {
         audioPlayer.play();
-        playPauseButton.HTML = "Pause";
+        playPauseButton.innerHTML = "pause";
         playing = true;
         if (songNumber === 1){
-            aiAnimated = document.getElementById("animated-ai").src="assets/hoshino-ai-cover-gif.gif";
+            aiAnimated.src="assets/hoshino-ai-cover-gif.gif";
          }
          else if (songNumber === 2){
-             aiAnimated = document.getElementById("animated-ai").src="assets/sigewinne-genshin-cover-gif.gif";
+             aiAnimated.src="assets/sigewinne-genshin-cover-gif.gif";
         
                                    }
            }  
@@ -109,16 +113,48 @@ function secondsToMMSS(seconds){
     return MM + ":" + SS;
 }
 
-/* change this :D 
-function onPreviousNextClick(songNumber){
-    if (songNumber === 1){
-        songNumber === songNumber+1
-        
+
+function onPreviousClick(){
+    songNumber = songNumber-1;
+
+    if (songNumber < 1) {
+        songNumber = 2; // remember to add another song (3)
+    }
+    // console.log('song number check < 1', songNumber)
+    if (songNumber === 1) {
+        aiAnimated.src="assets/hoshino-ai-cover.jpeg";
+        audioPlayer.src = "assets/yoasobi-idol.mp3";
+    }
+    if (songNumber === 2 ) {
+        aiAnimated.src="assets/sigewinne-genshin-cover.png";
+        audioPlayer.src = "assets/sigewinne-demo.mp3";
     }
 
-}
-*/
+    styleChange();
 
+
+}
+
+
+function onNextClick(){
+    songNumber = songNumber+1;
+
+    if (songNumber < 1) {
+        songNumber = 2; // remember to add another song (3)
+    }
+    // console.log('song number check < 1', songNumber)
+    if (songNumber === 1) {
+        aiAnimated.src="assets/hoshino-ai-cover.jpeg";
+        audioPlayer.src = "assets/yoasobi-idol.mp3";
+    }
+    if (songNumber === 2 ) {
+        aiAnimated.src="assets/sigewinne-genshin-cover.png";
+        audioPlayer.src = "assets/sigewinne-demo.mp3";
+    }
+    
+    styleChange();
+
+}
 
 
 
@@ -136,6 +172,11 @@ volumeSlider.onchange = onVolumeSliderChange;
 // progress slider events
 progressSlider.onchange = onProgressSliderChange;
 progressSlider.onmousedown = onProgressMouseDown;
+
+
+previousButton.onclick = onPreviousClick;
+nextButton.onclick = onNextClick;
+
 
 
 /*     |(^w^)/     */
