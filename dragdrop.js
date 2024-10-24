@@ -28,6 +28,10 @@ let draggedImage = undefined;
 function onDragStart(event) {
     // event target points to the html element that start the drag event, ie the currently dragged image
     draggedImage = event.target;
+    if (sliderIsChanging) {
+        event.preventDefault();
+        return;
+    }
 
     // 
     const style = window.getComputedStyle(draggedImage, null);

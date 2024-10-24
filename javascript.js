@@ -24,6 +24,12 @@ audioPlayer.volume = 0.5;
 let playing = false;
 let updatingProgress = false;
 
+// stores if any of the sliders are changing
+let sliderIsChanging = false; 
+
+let progressSliderMoving = false;
+
+
 /**
  *  starts song as 1
  *  next song = +1 increment
@@ -92,13 +98,21 @@ function onVolumeSliderChange(){
     audioPlayer.volume = volumeSlider.value * 0.01;
 }
 
+function onVolumeMouseDown(){
+    sliderIsChanging = true;
+}
+
 function onProgressMouseDown(){
     updatingProgress = true;
+    progressSliderMoving = true;
+    sliderIsChanging = true;
 }
 
 function onProgressSliderChange(){
     audioPlayer.currentTime = progressSlider.value;
     updatingProgress = false;
+    progressSliderMoving = false;
+    sliderIsChanging = false;
 }
 
 function secondsToMMSS(seconds){
