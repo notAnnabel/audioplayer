@@ -57,7 +57,7 @@ function onPlayPauseClick(){
         else if (songNumber === 2){
             aiAnimated.src="assets/sigewinne-genshin-cover.png";
         }
-    } else {
+    if (!playing) {
         audioPlayer.play();
         playPauseButton.innerHTML = "pause";
         playing = true;
@@ -69,6 +69,7 @@ function onPlayPauseClick(){
         
                                    }
            }  
+}
 }
 
 /** */

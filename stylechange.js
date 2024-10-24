@@ -2,12 +2,11 @@ console.log('this variable is', songNumber);
 
 
 // get css elements
-let defaultText = document.getElementById("main-container"); 
+let mainContainer = document.getElementById("main-container"); 
 let backgroundBox = document.getElementById("box");
 let titleColor = document.getElementById("title");
 let songColor = document.getElementById("song-title");
 let artistColor = document.getElementById("artist-title");
-let backgroundBackground = document.getElementById("main-container");
 
 let buttonColorPlay = document.getElementById("play-button");
 let buttonColorPrevious = document.getElementById("previous-button");
@@ -18,6 +17,19 @@ let progressSliderColor = document.getElementById("progress-slider");
 
 let imageBorder = document.getElementById("animated-ai");
 
+const mainContainerStyles = [
+    //at index 0 -> styles for song 1
+    {
+        color: "black",
+        backgroundColor: "rgb(236, 215, 250)",
+    },
+
+    //at index 1 -> styles for song 2
+    {
+        color: "#1B2346ff",
+        backgroundColor: "rgb(236, 215, 250)",
+    },
+]
 
 /* CSS HEX 
 --french-gray: #C8D0E1ff; pastel bluegrey
@@ -35,7 +47,9 @@ function styleChange() {
         songColor.innerHTML = "IDOL";
     }
     if (songNumber === 2) {
-        defaultText.style = "#1B2346ff";
+        mainContainer.style.color = "#1B2346ff";
+        mainContainer.style.backgroundColor = "#E2849Dff";
+
         backgroundBox.style.color = "#77BACEff";
         artistColor.style.color = "#B5908Dff";
         artistColor.innerHTML= "tnbee";// rosegold
@@ -65,7 +79,6 @@ function styleChange() {
         volumeSliderColor.style.backgroundColor = "#B5908Dff";
         progressSliderColor.style.backgroundColor = "#B5908Dff";
 
-        backgroundBackground.style.backgroundColor = "#E2849Dff";
     }
 
 }
