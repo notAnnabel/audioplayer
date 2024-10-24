@@ -1,6 +1,6 @@
 #title{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color:rgb(170, 130, 152);
+    color:rgb(170, 130, 152); /* */
     /* audio player title*/
 }
 
@@ -11,14 +11,14 @@
 
 #artist-title{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color:rgb(175, 140, 208);
+    color:rgb(175, 140, 208); /* */
     margin-left: 5px;
 }
 
 #box{
     background-color: rgb(234, 179, 248);
     padding: 25px;
-    position: relative;
+    position: relative; /* */
 }
 
 /* #play-button {
@@ -45,7 +45,7 @@
 #main-container{
     width: 100vw;
     height: 100vh;
-    background-color: rgb(236, 215, 250);
+    background-color: rgb(236, 215, 250); /* */
 }
 
 
@@ -58,9 +58,9 @@
 #animated-ai {
     border-style: solid;
     border-width: 10px;
-    border-color: rgb(126, 84, 135);
+    border-color: rgb(126, 84, 135); /* */
     margin-top: 10px;
-    box-shadow: 4px 4px rgb(110, 63, 77);
+    box-shadow: 4px 4px rgb(110, 63, 77); /* */
     margin-bottom: 10px;
     object-fit: cover;
     width: 20vw;
@@ -68,7 +68,7 @@
 }
 
 button {
-    background-color: rgb(172, 128, 182);
+    background-color: rgb(172, 128, 182); /* */
     border-style: solid;
     border-color: rgb(110, 63, 77);
     border-width: 2px;
@@ -83,7 +83,7 @@ button {
 input {
     -webkit-appearance: none;
     appearance: none;
-    background-color: rgb(175, 157, 193);
+    background-color: rgb(175, 157, 193); /* */
     height: 7px;
     border-radius: 2px;
 }

@@ -31,6 +31,8 @@ const mainContainerStyles = [
     },
 ]
 
+
+
 /* CSS HEX 
 --french-gray: #C8D0E1ff; pastel bluegrey
 --sky-blue: #77BACEff; turquoiseish
@@ -79,6 +81,10 @@ function styleChange() {
         volumeSliderColor.style.backgroundColor = "#B5908Dff";
         progressSliderColor.style.backgroundColor = "#B5908Dff";
 
+    }
+    if (songNumber === 3){
+        songColor.innerHTML = "Let's go, Crimson knight!"
+        artistColor.innerHTML = "Yu-peng chen";
     }
 
 }
