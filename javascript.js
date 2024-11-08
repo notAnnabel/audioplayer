@@ -106,6 +106,8 @@ function onVolumeSliderChange() {
 }
 
 function onVolumeMouseDown() {
+    updatingProgress = true; // delete ?
+    progressSliderMoving = true; //delete
     sliderIsChanging = true;
 }
 
@@ -214,12 +216,13 @@ audioPlayer.onended = onEnded;
 
 // volume slider events
 volumeSlider.onchange = onVolumeSliderChange;
+volumeSlider.onmousedown = onVolumeMouseDown; //dekete
 
 // progress slider events
 progressSlider.onchange = onProgressSliderChange;
 progressSlider.onmousedown = onProgressMouseDown;
 
-
+// song change events
 previousButton.onclick = onPreviousClick;
 nextButton.onclick = onNextClick;
 
